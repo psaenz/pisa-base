@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.pisa.core.dao.hibernate.HibernateSimpleModel" table="HibernateSimpleModel">
+        <id name="id" column="id">
+            <generator class="native"/>
+        </id>
+        <property name="title" type="string"/>
+    </class>
+
+    <class name="com.pisa.core.dao.hibernate.HibernatePisaModel" table="HibernatePisaModel">
+        <id name="id" column="id" type="int">
+            <generator class="native"/>
+        </id>
+        <property name="createdOn" type="timestamp"/>
+        <property name="modifiedOn" type="timestamp"/>
+        <property name="createdBy" type="string"/>
+        <property name="modifiedBy" type="string"/>
+    </class>
+</hibernate-mapping>

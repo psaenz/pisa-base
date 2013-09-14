@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <!--
+    cd C:\Users\psaenz\Documents\NetBeansProjects\pisa-base\pisa-base-dao-hibernate
+    mvn exec:java -Dexec.mainClass="org.hsqldb.Server" -Dexec.args="-database.0 file:C:\Windows\Temp\PISA-TEST
+    OJO AL MENSAJE DE WARNING QUE DA AL INICIAR:
+        Using Hibernate built-in connection pool (not for production use!)
+        HAY Q CORREGIR ESTO
+    -->
+    <session-factory>
+        <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="connection.url">jdbc:hsqldb:hsql://127.0.0.1</property>
+        <property name="connection.username">sa</property>
+        <property name="connection.password"></property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Drop and re-create the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+
+        <mapping resource="hibernateMappingTest.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
