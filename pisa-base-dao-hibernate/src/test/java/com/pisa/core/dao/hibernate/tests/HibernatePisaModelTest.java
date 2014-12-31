@@ -1,13 +1,19 @@
 package com.pisa.core.dao.hibernate.tests;
 
-import com.pisa.core.dao.hibernate.HibernatePisaModel;
+import com.pisa.core.base.dao.business.PisaDaoFactory;
+import com.pisa.core.base.model.ITrackableModel;
+import com.pisa.core.dao.hibernate.model.HibernatePisaModel;
 import com.pisa.core.dao.hibernate.HibernateUtil;
 import com.pisa.core.base.model.business.PisaModelFactory;
+import com.pisa.core.dao.hibernate.dao.HibernatePisaModelDao;
+import java.lang.reflect.Method;
 import java.util.GregorianCalendar;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+import org.hibernate.internal.CriteriaImpl;
 
 /**
  * Unit test for simple App.
@@ -42,6 +48,9 @@ public class HibernatePisaModelTest extends TestCase
         hmt.setCreatedBy("Created By Me");
         hmt.setModifiedBy("Modified By Me");
         hmt.setCreatedOn(GregorianCalendar.getInstance().getTime());
+        HibernatePisaModelDao dao = PisaDaoFactory.createInstance(HibernatePisaModelDao.class);
+        dao.save(hmt);
+        
         Integer id = (Integer) session.save(hmt);
         session.getTransaction().commit();
 
@@ -74,6 +83,7 @@ public class HibernatePisaModelTest extends TestCase
         // Loads the object again to check if value was updated
         session = HibernateUtil.getSessionFactory().getCurrentSession();
         session.beginTransaction();
+        
         HibernatePisaModel hmt2 = (HibernatePisaModel) session.load(HibernatePisaModel.class, 1);
 
         assertNotNull(hmt2);

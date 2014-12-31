@@ -1,4 +1,4 @@
-package com.pisa.core.dao.hibernate;
+package com.pisa.core.dao.hibernate.model;
 
 import com.pisa.core.base.model.ITrackableModel;
 import com.pisa.core.base.model.impl.PisaBaseModel;
@@ -18,7 +18,6 @@ import com.pisa.core.base.model.impl.PisaBaseModel;
 
 public abstract class HibernatePisaModel extends PisaBaseModel<Integer> implements ITrackableModel{
 
-    public HibernatePisaModel(){}
     // This property was created in order to ensure PisaHibernate Framework supports overrided properties and methods.
     private String modifiedBy;
 

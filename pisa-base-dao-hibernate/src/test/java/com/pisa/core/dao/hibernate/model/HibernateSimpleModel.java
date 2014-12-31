@@ -1,4 +1,4 @@
-package com.pisa.core.dao.hibernate;
+package com.pisa.core.dao.hibernate.model;
 
 /**
  * Simple POJO in order to check if PisaHibernate Framework works with

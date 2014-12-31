@@ -1,6 +1,6 @@
 package com.pisa.core.dao.hibernate.tests;
 
-import com.pisa.core.dao.hibernate.HibernateSimpleModel;
+import com.pisa.core.dao.hibernate.model.HibernateSimpleModel;
 import com.pisa.core.dao.hibernate.HibernateUtil;
 import junit.framework.Test;
 import junit.framework.TestCase;

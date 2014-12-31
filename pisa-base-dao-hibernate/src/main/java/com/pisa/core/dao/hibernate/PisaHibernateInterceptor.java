@@ -30,7 +30,7 @@ public class PisaHibernateInterceptor extends EmptyInterceptor{
      * given entity and sets its id as corresponding.
      * 
      * In case the entity doesn't belong to the PisaModel Framework, then returns a null value which
-     * indicates Hibernate to try to instantiate the entity name in his normal way.
+     * indicates Hibernate to try to instantiate the entity in his normal way.
      * 
      * @param entityName
      * @param entityMode
@@ -56,7 +56,7 @@ public class PisaHibernateInterceptor extends EmptyInterceptor{
         }
 
         // let Hibernate to do the instantiation
-        log.debug("Letting Hibernate to instantiate the entity in his normal way.");
+        log.debug("Letting Hibernate to instantiate the '" + entityName + "' entity in his normal way.");
         return null;
     }
 
@@ -72,7 +72,7 @@ public class PisaHibernateInterceptor extends EmptyInterceptor{
     @Override
     public String getEntityName(Object object) {
         if (PisaModelFactory.isProxyPisaModelClass(object.getClass())){
-            // if it is proxied, then take the entity from his superclass
+            // if it is proxied, then take the entity name from his superclass
             return object.getClass().getSuperclass().getName();
         }else{
             // if it is a normal entity obj, then user his classname
