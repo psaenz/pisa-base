@@ -1,6 +1,7 @@
 package com.pisa.core.base.services.business;
 
 import com.pisa.core.base.model.business.PisaModelFactory;
+import com.pisa.core.base.services.IBaseModelService;
 import com.pisa.core.base.services.IHistoricalModelService;
 import com.pisa.core.base.services.INoDeletableModelService;
 import com.pisa.core.base.services.IOneKeyModelService;
@@ -30,6 +31,7 @@ public class PisaServiceInterfaceRegistry extends Registry<Class, PisaBaseServic
      */
     private PisaServiceInterfaceRegistry(){
         super(true);
+        this.register(IBaseModelService.class, new PisaBaseService());
         this.register(IHistoricalModelService.class, new HistoricalModelService());
         this.register(INoDeletableModelService.class, new NoDeletableModelService());
         this.register(IOneKeyModelService.class, new OneKeyModelService());

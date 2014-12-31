@@ -3,7 +3,7 @@ package com.pisa.core.base.services;
 import com.pisa.core.base.model.IOneKeyModel;
 
 /**
- * Dao classes that implements this interface will be in charge of persist one-key model objects.
+ * Service classes that implements this interface will be in charge of persist one-key model objects.
  * 
  * One-Key models objects are those that implements the {@linkplain IOneKeyModel} interface.
  * 
@@ -14,6 +14,7 @@ import com.pisa.core.base.model.IOneKeyModel;
 
 public interface IOneKeyModelService<KEY_TYPE> {
 
+    
     /**
      * Returns the model identify by the given ID.
      * 

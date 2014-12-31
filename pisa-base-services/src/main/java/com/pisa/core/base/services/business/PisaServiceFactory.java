@@ -53,13 +53,13 @@ public class PisaServiceFactory {
                 }
 
                 // The method DOES belongs to one of the interfaces registered in PisaServiceInterfaceRegistry
-                // it means the method will be handled by the PisaModelMethodHandler class
+                // it means the method will be handled by the PisaServiceMethodHandler class
                 return true;
             }
         };
 
-        // The new instance will be of the type MODEL_CLASS
-        // Now we try to create the instance by given 'PisaModelMethodHandler' as the method handler
+        // The new instance will be of the type SERVICE_CLASS
+        // Now we try to create the instance by given 'PisaServiceMethodHandler' as the method handler
         SERVICE_CLASS newInstance = (SERVICE_CLASS) ProxyFactory.createInstance(serviceClazz, methodFilter, new PisaServiceMethodHandler());
 
         // Returns the instance just dynamically created 

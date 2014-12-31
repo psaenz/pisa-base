@@ -11,7 +11,7 @@ import com.pisa.core.base.services.IHistoricalModelService;
  *
  * @author PISA
  */
-public class HistoricalModelService extends PisaBaseService implements IHistoricalModelService{
+public class HistoricalModelService extends PisaBaseService implements IHistoricalModelService {
 
     public IHistoricalModel getFromHistory(IHistoricalModel model) {
         System.out.println("Getting object from history");

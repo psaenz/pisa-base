@@ -7,6 +7,6 @@ import com.pisa.core.base.model.impl.PisaBaseModel;
  *
  * @author PISA
  */
-public abstract class BasicModel extends PisaBaseModel<String> implements IHistoricalModel{
+public abstract class ServiceModel4Test extends PisaBaseModel<String> implements IHistoricalModel{
     
 }

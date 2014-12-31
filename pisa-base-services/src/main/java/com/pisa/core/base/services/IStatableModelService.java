@@ -3,7 +3,7 @@ package com.pisa.core.base.services;
 import com.pisa.core.base.model.IStatableModel;
 
 /**
- * Dao classes that implements this interface will be in charge of persist Statable model objects.
+ * Service classes that implements this interface will be in charge of persist Statable model objects.
  * 
  * Statable models objects are those that implements the {@linkplain IStatableModel} interface.
  * 

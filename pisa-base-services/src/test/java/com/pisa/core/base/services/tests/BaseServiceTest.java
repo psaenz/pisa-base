@@ -1,8 +1,8 @@
 package com.pisa.core.base.services.tests;
 
 import com.pisa.core.base.model.business.PisaModelFactory;
-import com.pisa.core.base.services.BasicModel;
-import com.pisa.core.base.services.BasicService;
+import com.pisa.core.base.services.ServiceModel4Test;
+import com.pisa.core.base.services.TestService;
 import com.pisa.core.base.services.business.PisaServiceFactory;
 import junit.framework.Test;
 import junit.framework.TestCase;
@@ -45,14 +45,13 @@ public class BaseServiceTest
         //http://docs.jboss.org/hibernate/orm/3.3/reference/en/html/events.html
         //https://forum.hibernate.org/viewtopic.php?t=940809
         //http://www.mkyong.com/hibernate/hibernate-interceptor-example-audit-log/
-        BasicService basicService = PisaServiceFactory.createInstance(BasicService.class);
-        //BasicModel basicModel = PisaModelFactory.createInstance(BasicModel.class);
-        //PisaModelFactory.createInstance(null);
-        
-        //basicModel.setId("Basic Model Id");
-        
-                
-        basicService.sendToHistory(null);
+
+        TestService basicService = PisaServiceFactory.createInstance(TestService.class);
+
+        ServiceModel4Test basicModel = PisaModelFactory.createInstance(ServiceModel4Test.class);
+        basicModel.setId("Basic Model Id");
+        //basicService.sendToHistory(null);
+        basicService.save(basicModel);
         
         /**
          * - The interfaces define the functions for each type of service.
@@ -64,7 +63,5 @@ public class BaseServiceTest
          * - Since the user services are abstract, we need to use the Service Factory to create instances of each service
          * - The factory will return a proxy of the service, so the methods defined in the interfaces will be handled by the methodHandle
          */
-        
-        
     }
 }
