@@ -10,5 +10,6 @@ package com.pisa.core.base.model;
 public interface IOneKeyModel<KEY_TYPE> {
     
     KEY_TYPE getId();
+
     void setId(KEY_TYPE id);
 }

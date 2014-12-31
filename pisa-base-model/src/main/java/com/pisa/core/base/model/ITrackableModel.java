@@ -9,6 +9,11 @@ import java.util.Date;
  * for CreatedOn, CreatedBy, ModifiedOn, ModifiedBy fields
  * will be updated accordingly.
  * 
+ * The difference with the {@linkplain IAuditableModel} is that auditable 
+ * will save any change made to any of the properties in the model, in the
+ * other hand, trackable objects only saying when and who changed the object
+ * but it wont detail what exactly was changed.
+ * 
  * @author PISA
  */
 
