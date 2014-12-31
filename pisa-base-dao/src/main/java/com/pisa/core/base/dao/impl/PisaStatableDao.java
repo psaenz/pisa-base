@@ -11,6 +11,7 @@ public class PisaStatableDao<STATE_TYPE> extends PisaBaseDao implements IStatabl
 
     @Override
     public boolean SetStatus(IStatableModel model, STATE_TYPE status) {
+        //TODO: aqui hay q actualizar el estado del objecto 
         System.out.println("PisaStatableDao.SetStatus : " + status);
         return true;
     }

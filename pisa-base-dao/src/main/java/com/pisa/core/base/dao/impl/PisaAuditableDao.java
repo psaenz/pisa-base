@@ -14,9 +14,9 @@ import com.pisa.core.utils.compare.CompareResult.CompareResultDetail;
 public class PisaAuditableDao extends PisaBaseDao implements IAuditableModelDao{
 
     @Override
-    public boolean audit(IAuditableModel oldModel, IAuditableModel newModel, PisaDaoAction action) throws IllegalArgumentException {
+    public boolean auditAction(IAuditableModel oldModel, IAuditableModel newModel, PisaDaoAction action) throws IllegalArgumentException {
         if (action == null)
-            throw new java.lang.IllegalArgumentException("PisaDaoAction argument cannot be null.");
+            throw new java.lang.IllegalArgumentException(PisaDaoAction.class.getName() + " argument cannot be null.");
 
         if (action == PisaDaoAction.UPDATE){
             CompareResult result = Compare.Compare(oldModel, newModel);

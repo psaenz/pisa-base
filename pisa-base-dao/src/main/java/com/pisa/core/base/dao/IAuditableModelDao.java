@@ -22,6 +22,6 @@ public interface IAuditableModelDao {
      * @param action
      * @return 
      */
-    public boolean audit(IAuditableModel oldModel, IAuditableModel newModel, PisaDaoAction action);
+    public boolean auditAction(IAuditableModel oldModel, IAuditableModel newModel, PisaDaoAction action);
 
 }

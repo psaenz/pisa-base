@@ -26,6 +26,7 @@ public class PisaDaoMethodHandler implements IProxyMethodHandler {
 
     @Override
     public Object invoke(Object o, Method method, Method method1, Object[] os) throws Throwable {
+        System.out.println("Handling method " + method.getName());
         PisaBaseDao dao = PisaDaoInterfaceRegistry.getInstance().getRegistry(method.getDeclaringClass());
         return method.invoke(dao, os);
     }

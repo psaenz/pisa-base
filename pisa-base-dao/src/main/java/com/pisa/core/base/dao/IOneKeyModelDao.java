@@ -1,6 +1,7 @@
 package com.pisa.core.base.dao;
 
 import com.pisa.core.base.model.IOneKeyModel;
+import java.io.Serializable;
 
 /**
  * Dao classes that implements this interface will be in charge of persist one-key model objects.
@@ -12,7 +13,7 @@ import com.pisa.core.base.model.IOneKeyModel;
  * @author PISA
  */
 
-public interface IOneKeyModelDao<KEY_TYPE> {
+public interface IOneKeyModelDao <MODEL_TYPE extends IOneKeyModel, KEY_TYPE extends Serializable> {
 
     /**
      * Returns the model identify by the given ID.
@@ -22,6 +23,6 @@ public interface IOneKeyModelDao<KEY_TYPE> {
      * @param key
      * @return 
      */
-    IOneKeyModel<KEY_TYPE> findById(KEY_TYPE key);
-
+    MODEL_TYPE findById(KEY_TYPE key);
+    
 }

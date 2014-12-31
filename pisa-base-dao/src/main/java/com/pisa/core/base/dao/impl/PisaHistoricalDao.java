@@ -11,6 +11,10 @@ public class PisaHistoricalDao extends PisaBaseDao implements IHistoricalModelDa
 
     @Override
     public boolean sendToHistory(IHistoricalModel model) {
+        // TODO: Aqui tengo q llenar algunas propiedades antes de enviarlo a historico
+        //       asi como la fecha cuando fue enviado a historico
+        //       el usuario q lo esta enviando a historico
+        //       tambien tenemos q eliminar el objeto original
         System.out.println("PisaHistoricalDao.sendToHistory: " + model);
         return true;
     }

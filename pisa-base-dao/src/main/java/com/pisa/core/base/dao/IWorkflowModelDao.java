@@ -13,7 +13,7 @@ import com.pisa.core.base.model.IWorkflowModel;
  * @author PISA
  */
 
-public interface IWorkflowModelDao<STEP_TYPE, STATUS_TYPE>  extends IStatableModelDao<STATUS_TYPE> {
+public interface IWorkflowModelDao<STEP_TYPE> {
 
     /**
      * Updates the Workflow object in order to move it to the next step

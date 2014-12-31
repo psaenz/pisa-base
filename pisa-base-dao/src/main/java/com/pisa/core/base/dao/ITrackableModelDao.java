@@ -1,7 +1,8 @@
 package com.pisa.core.base.dao;
 
+import com.pisa.core.base.model.IOneKeyModel;
 import com.pisa.core.base.model.ITrackableModel;
-import java.util.Calendar;
+import java.io.Serializable;
 
 /**
  * Dao classes that implements this interface will be in charge of persist Trackable model objects.
@@ -24,7 +25,7 @@ public interface ITrackableModelDao {
      * @param createdBy
      * @return 
      */
-    public boolean save(ITrackableModel model, String createdBy);
+    public boolean save(ITrackableModel model);
 
     /**
      * Updates the Trackable model object at the same time the information of whom
@@ -33,6 +34,6 @@ public interface ITrackableModelDao {
      * @param modifiedBy
      * @return 
      */
-    public boolean update(ITrackableModel model, String modifiedBy);
+    public boolean update(ITrackableModel model);
 
 }
